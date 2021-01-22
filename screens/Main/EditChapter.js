@@ -1,10 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
 import useTheme from '../../hooks/useTheme';
-import logo from '../../assets/images/cover/002.jpg';
-import AuthContext from '../../context/AuthContext';
 import { StatusBar } from 'expo-status-bar';
-import { Icon } from 'react-native-elements';
 import { Content, Header, Body, Title, Separator, Left, Right, Button, Card } from 'native-base';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -76,7 +73,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function AddChapterScreen({navigation}) {
+export default function EditChapterScreen({navigation}) {
 
   return(
     <View style={styles.container}>
@@ -87,7 +84,7 @@ export default function AddChapterScreen({navigation}) {
                 </Button>
             </Left>
             <Body style={{flex: 1, justifyContent: 'center'}}>
-                <Title>Add Chapter</Title>
+                <Title>Edit Chapter</Title>
             </Body>
             <Right style={{flex: 0.2}}/>
         </Header>
@@ -98,7 +95,7 @@ export default function AddChapterScreen({navigation}) {
                     <Text style={{ fontSize: font_size.size.md }}>Chapter Title</Text>
                 </View>
                 <TextInput 
-                placeholder="Insert Chapter Name"
+                placeholder="Edit Chapter Name"
                 style={[styles.input, styles.objectMargin]}>
                 </TextInput>
                 <View style={{ marginTop:15 }}>
@@ -113,10 +110,15 @@ export default function AddChapterScreen({navigation}) {
                 </View>
 
 
-                <View style={[styles.objectMargin, { marginTop: 38 }]}>
+                <View style={[styles.objectMargin, { marginTop: 38, justifyContent: 'space-evenly', flexDirection: 'row' }]}>
                 <Button style={[styles.button, { alignSelf: 'center' }]}>
                   <Text style={{ color: font_color.common.white, fontSize: font_size.size.md }}>
                     Submit
+                  </Text>
+                </Button>
+                <Button style={[styles.button, { alignSelf: 'center', backgroundColor: font_color.error.main }]}>
+                  <Text style={{ color: font_color.common.white, fontSize: font_size.size.md }}>
+                    Delete Chapter
                   </Text>
                 </Button>  
                 </View>

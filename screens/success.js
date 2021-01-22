@@ -3,6 +3,7 @@ import HomeScreen from './Main/Home';
 import ReadScreen from './Main/Read';
 import MainScreen from './Main/Main';
 import AddChapterScreen from './Main/AddChapter';
+import EditChapterScreen from './Main/EditChapter';
 import { CardStyleInterpolators } from '@react-navigation/stack';
 
 export default [
@@ -25,6 +26,11 @@ export default [
   {
     name: 'AddChapter',
     component: AddChapterScreen,
+    options: { headerShown: false },
+  },
+  {
+    name: 'EditChapter',
+    component: EditChapterScreen,
     options: { headerShown: false },
   },
   {
