@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const HomeScreen = () => (
+const DetailScreen = () => (
   <View style={styles.container}>
 
   <View style={{
@@ -380,4 +380,4 @@ Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku ter
   </View>
 );
 
-export default HomeScreen;
+export default DetailScreen;
