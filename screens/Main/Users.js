@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Image, Text, ScrollView, } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import useTheme from '../../hooks/useTheme';
-import MangaItem from '../../components/MangaItem';
+import ListMangaItem from '../../components/ListMangaItem';
+import SettingsProfile from '../../components/SettingsProfile';
 import covers from '../../assets/images/cover/Users/001.jpg';
 import avatar from '../../assets/images/avatar/user1.jpg';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
@@ -72,27 +73,39 @@ const UsersScreen = ({ navigation }) => {
   const FirstRoute = () => (
     <View style={{ paddingHorizontal: 24, marginTop: 24 }}>
           
-          <Text style={styles.Title}>My Bookmark</Text>
-          
           <View>
             {[1, 2, 3, 4].map((i) => (
-              <MangaItem key={i} navigation={navigation} />
+              <ListMangaItem key={i} navigation={navigation} />
             ))}
           </View>
   
     </View>
   );
   const SecondRoute = () => (
-    <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
+    <View style={{ paddingHorizontal: 24, marginTop: 24 }}>
+          
+          <View>
+            {[1, 2, 3, 4].map((i) => (
+              <ListMangaItem key={i} navigation={navigation} />
+            ))}
+          </View>
+  
+    </View>
   );
   const ThirdRoute = () => (
-    <View style={[styles.scene, { backgroundColor: font_color.primary.main }]} />
+    <View style={{ paddingHorizontal: 24, marginTop: 24 }}>
+          
+          <View>
+            <SettingsProfile/>
+          </View>
+  
+    </View>
   );
   const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-      { key: 'first', title: 'First' },
-      { key: 'second', title: 'Second' },
-      { key: 'third', title: 'Third' },
+      { key: 'first', title: 'Bookmark' },
+      { key: 'second', title: 'History' },
+      { key: 'third', title: 'Settings' },
     ]);
     const renderScene = SceneMap({
       first: FirstRoute,
@@ -103,7 +116,7 @@ const UsersScreen = ({ navigation }) => {
   return(
   <ScrollView style={styles.container}>
 
-    <View style={{ position: 'relative' }}>
+    <View>
       <Image
         style={styles.covers}
         source={covers}
