@@ -6,6 +6,54 @@ import Constants from 'expo-constants';
 import useTheme from '../../hooks/useTheme';
 
 const { font_color, font_size } = useTheme();
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: font_color.common.white,
+    paddingTop: Constants.statusBarHeight,
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "white",
+    paddingVertical: 5,
+    marginHorizontal: 5,
+    alignSelf: 'center',
+  },
+  Navbaar: {
+    width: 400,
+    height: 100,
+    backgroundColor: "#6496b7",
+  },
+  text3: {
+    fontSize: 15,
+    color: "#f8f8f8",
+    alignSelf: 'center',
+    fontWeight: "bold",
+  },
+  text4: {
+    fontSize: 15,
+    color: "#f8f8f8",
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    paddingBottom: 30,
+    fontWeight: "bold",
+  },
+  icon: {
+    alignSelf: 'center',
+  },
+  icon2: {
+    width: 165,
+    height: 209,
+    backgroundColor: "#6496b8",
+    paddingVertical: 50,
+    borderRadius: 30,
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 10,
+  },
+});
+
 
 const DashboardScreen = ({navigation}) => {
   return (
@@ -63,50 +111,3 @@ const DashboardScreen = ({navigation}) => {
 };
 export default DashboardScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: font_color.common.white,
-    paddingTop: Constants.statusBarHeight,
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "white",
-    paddingVertical: 5,
-    marginHorizontal: 5,
-    alignSelf: 'center',
-  },
-  Navbaar: {
-    width: 400,
-    height: 100,
-    backgroundColor: "#6496b7",
-  },
-  text3: {
-    fontSize: 15,
-    color: "#f8f8f8",
-    alignSelf: 'center',
-    fontWeight: "bold",
-  },
-  text4: {
-    fontSize: 15,
-    color: "#f8f8f8",
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    paddingBottom: 30,
-    fontWeight: "bold",
-  },
-  icon: {
-    alignSelf: 'center',
-  },
-  icon2: {
-    width: 165,
-    height: 209,
-    backgroundColor: "#6496b8",
-    paddingVertical: 50,
-    borderRadius: 30,
-    marginTop: 10,
-    marginBottom: 10,
-    marginLeft: 10,
-  },
-});

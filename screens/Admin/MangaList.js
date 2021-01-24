@@ -12,12 +12,20 @@ const MangaListScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={{
-              padding: 10,
-              backgroundColor: font_color.primary.main,
-            }}
-            >
-              <Text style={styles.text}>Admin Panel</Text>
-        </View>
+          padding: 10,
+          flexDirection: 'row',
+          backgroundColor: font_color.primary.main,
+        }}
+      >
+      <TouchableOpacity style={styles.iconButton} onPress={()=>navigation.goBack()}>
+        <FontAwesome
+          name="angle-left"
+          size={30}
+          style={{ color: font_color.common.white, }}
+        />
+      </TouchableOpacity>
+      <Text style={styles.text}>Admin Panel</Text>
+    </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.inputView}>
           <TextInput
@@ -142,11 +150,15 @@ const styles = StyleSheet.create({
     backgroundColor: font_color.common.white,
     paddingTop: Constants.statusBarHeight,
   },
+  iconButton: {
+    padding: 8,
+  },
   text: {
     fontSize: 20,
     fontWeight: "bold",
     color: "white",
     paddingVertical: 5,
+    marginHorizontal: 120,
     alignSelf: 'center',
   },
   Navbaar: {

@@ -2,6 +2,7 @@ import HomeScreen from './Home';
 import UsersScreen from './Users';
 import ReviewScreen from './Review';
 import SearchScreen from "../../components/SearchScreen";
+import DashboardScreen from '../Admin/Dashboard';
 import { CardStyleInterpolators } from '@react-navigation/stack';
 
 export default [
@@ -16,9 +17,9 @@ export default [
     component: SearchScreen,
   },
   {
-    name: 'Review',
-    icon: 'star',
-    component: ReviewScreen,
+    name: 'Dashboard',
+    icon: 'address-book',
+    component: DashboardScreen,
   },
   {
     name: 'Users',

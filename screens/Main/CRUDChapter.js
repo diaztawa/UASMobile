@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     paddingTop: 6,
     paddingHorizontal: 15,
     marginTop: 50,
-    marginLeft: 224,
+    marginLeft: 250,
     position: 'absolute',
     flexDirection: 'row',
   },
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
     paddingVertical: 5,
-    marginHorizontal: 110,
+    marginHorizontal: 150,
     alignSelf: 'center',
   },
 });
@@ -222,7 +222,7 @@ const CRUDChapterScreen = ({navigation}) => (
       backgroundColor: font_color.primary.main,
     }}
     >
-      <TouchableOpacity style={styles.iconButton}>
+      <TouchableOpacity style={styles.iconButton} onPress={()=>navigation.goBack()}>
         <Text>
         <FontAwesome
           name="angle-left"

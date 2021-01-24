@@ -17,7 +17,7 @@ const MangaNewScreen = ({navigation}) => {
           backgroundColor: font_color.primary.main,
         }}
       >
-      <TouchableOpacity style={styles.iconButton}>
+      <TouchableOpacity style={styles.iconButton} onPress={()=>navigation.goBack()}>
         <FontAwesome
           name="angle-left"
           size={30}
