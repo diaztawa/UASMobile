@@ -11,8 +11,8 @@ import { CardStyleInterpolators } from '@react-navigation/stack';
 
 export default [
   {
-    name: 'EditChapter',
-    component: EditChapterScreen,
+    name: 'Login',
+    component: LoginScreen,
     options: { headerShown: false },
   },
   {

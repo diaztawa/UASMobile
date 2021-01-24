@@ -157,8 +157,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow', 
     paddingTop: 6,
     paddingHorizontal: 15,
-    marginTop: 50,
-    marginLeft: 224,
+    top: 50,
+    left: 250,
     position: 'absolute',
     flexDirection: 'row',
   },
@@ -173,7 +173,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const HomeScreen = () => (
+export default function DetailsScreen({navigation}) {
+  const BackLogic = () => {
+    navigation.goBack();
+  }
+  return(
   <View style={styles.container}>
 
   <View style={{
@@ -183,7 +187,9 @@ const HomeScreen = () => (
       backgroundColor: font_color.primary.main,
     }}
     >
-      <TouchableOpacity style={styles.iconButton}>
+      <TouchableOpacity 
+      onPress={BackLogic}
+      style={styles.iconButton}>
         <Text>
         <FontAwesome
           name="angle-left"
@@ -260,7 +266,7 @@ Namun, kenyataan tidaklah semanis itu.
 
 Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku terlempar ini… adalah dunia kejam yang tidak diberkahi!
         </Text>
-        <View style={styles.fixtitle}>
+        <View style={[styles.fixtitle, { justifyContent: 'space-evenly' }]}>
         <TouchableOpacity style={styles.downWrapper}>
             <View style={styles.downbutton}>
             <Text style={styles.downtextButton}>Download</Text>
@@ -379,5 +385,4 @@ Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku ter
   </ScrollView>
   </View>
 );
-
-export default HomeScreen;
+};

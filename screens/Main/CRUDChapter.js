@@ -4,6 +4,7 @@ import { StyleSheet, View, ScrollView, TouchableOpacity, Image, Text, Button } f
 import Constants from 'expo-constants';
 import useTheme from '../../hooks/useTheme';
 import cover from '../../assets/images/cover/001.jpg';
+import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 
 const { font_color, font_size, radius } = useTheme();
 
@@ -202,15 +203,22 @@ const styles = StyleSheet.create({
       marginTop: 10,
       marginLeft: 10,
   },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "white",
+    paddingVertical: 5,
+    marginHorizontal: 110,
+    alignSelf: 'center',
+  },
 });
 
-const CRUDChapterScreen = () => (
+const CRUDChapterScreen = ({navigation}) => (
   <View style={styles.container}>
 
   <View style={{
       padding: 5,
       flexDirection: 'row',
-      justifyContent: 'space-between',
       backgroundColor: font_color.primary.main,
     }}
     >
@@ -221,8 +229,8 @@ const CRUDChapterScreen = () => (
           size={30}
           style={{ color: font_color.common.white, }}
         /> </Text>
-        <Text style={styles.back}>Back</Text>
       </TouchableOpacity>
+      <Text style={styles.text}>Manga</Text>
     </View>
     <ScrollView>
     <View style={styles.page}>
@@ -292,7 +300,7 @@ Namun, kenyataan tidaklah semanis itu.
 Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku terlempar ini… adalah dunia kejam yang tidak diberkahi!
         </Text>
 
-        <TouchableOpacity style={styles.downWrapper}>
+        <TouchableOpacity style={styles.downWrapper} onPress={()=>navigation.navigate('Edit')}>
             <View style={styles.downbutton}>
             <Text style={styles.downtextButton}>Edit Info</Text>
             <Text style={{ marginTop: 4, marginLeft: 5,}}>
@@ -308,7 +316,7 @@ Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku ter
 
         <View style={styles.blockViews2}>
             <Text style={styles.chap}>Chapter</Text>
-            <TouchableOpacity style={styles.addrapper}>
+            <TouchableOpacity style={styles.addrapper} onPress={()=>navigation.navigate('AddChapter')}>
             <View style={styles.addbutton}>
             <Text style={{ marginTop: 4, marginLeft: 5,}}>
             <FontAwesome
@@ -324,7 +332,7 @@ Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku ter
                 <View style={styles.metaItem}>
                 <Text style={{ color: font_color.text.main, fontSize: 18, fontWeight: '700', }}>Chapter 5</Text>
                 </View>
-                <TouchableOpacity style={styles.bookWrapper}>
+                <TouchableOpacity style={styles.bookWrapper} onPress={()=>navigation.navigate('EditChapter')}>
                 <View style={styles.bookbutton}>
                 <Text style={styles.booktextButton}>Edit Chapter</Text>
                 </View>
@@ -340,7 +348,7 @@ Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku ter
                 <View style={styles.metaItem}>
                 <Text style={{ color: font_color.text.main, fontSize: 18, fontWeight: '700', }}>Chapter 4</Text>
                 </View>
-                <TouchableOpacity style={styles.bookWrapper}>
+                <TouchableOpacity style={styles.bookWrapper} onPress={()=>navigation.navigate('EditChapter')}>
                 <View style={styles.bookbutton}>
                 <Text style={styles.booktextButton}>Edit Chapter</Text>
                 </View>
@@ -356,7 +364,7 @@ Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku ter
                 <View style={styles.metaItem}>
                 <Text style={{ color: font_color.text.main, fontSize: 18, fontWeight: '700', }}>Chapter 3</Text>
                 </View>
-                <TouchableOpacity style={styles.bookWrapper}>
+                <TouchableOpacity style={styles.bookWrapper} onPress={()=>navigation.navigate('EditChapter')}>
                 <View style={styles.bookbutton}>
                 <Text style={styles.booktextButton}>Edit Chapter</Text>
                 </View>
@@ -372,7 +380,7 @@ Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku ter
                 <View style={styles.metaItem}>
                 <Text style={{ color: font_color.text.main, fontSize: 18, fontWeight: '700', }}>Chapter 2</Text>
                 </View>
-                <TouchableOpacity style={styles.bookWrapper}>
+                <TouchableOpacity style={styles.bookWrapper} onPress={()=>navigation.navigate('EditChapter')}>
                 <View style={styles.bookbutton}>
                 <Text style={styles.booktextButton}>Edit Chapter</Text>
                 </View>
@@ -388,7 +396,7 @@ Benar, aku Nishida Kyouichi. Mau tidak mau harus mengakuinya, dunia tempatku ter
                 <View style={styles.metaItem}>
                 <Text style={{ color: font_color.text.main, fontSize: 18, fontWeight: '700', }}>Chapter 1</Text>
                 </View>
-                <TouchableOpacity style={styles.bookWrapper}>
+                <TouchableOpacity style={styles.bookWrapper} onPress={()=>navigation.navigate('EditChapter')}>
                 <View style={styles.bookbutton}>
                 <Text style={styles.booktextButton}>Edit Chapter</Text>
                 </View>
